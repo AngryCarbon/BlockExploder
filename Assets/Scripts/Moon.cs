@@ -23,7 +23,11 @@ public class Moon : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 				hasStarted = true;
 				Debug.Log ("You clicked the mouse button! Hurray!");
-				this.rigidbody2D.velocity = new Vector2 (0f, 10f);
+				
+				float[] possibleXValues = new float[] {-0.4F, -0.3F, -0.2F, 0.2F, 0.3F, 0.4F};
+				float x = possibleXValues[Random.Range (1, 6)];
+				
+				this.rigidbody2D.velocity = new Vector2 (x, 10F);
 			}
 		}
 	}
