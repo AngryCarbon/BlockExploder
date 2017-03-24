@@ -3,12 +3,14 @@ using System.Collections;
 
 public class Moon : MonoBehaviour {
 
-	public Paddle paddle;
+	private Paddle paddle;
 	private Vector3 paddleToMoonVector;
 	private bool hasStarted = false;
 
 	// Use this for initialization
 	void Start () {
+		// Attach Paddle to Moon
+		paddle = GameObject.FindObjectOfType<Paddle>();
 		// Collect relative difference of position between the Moon and the paddle
 		paddleToMoonVector = this.transform.position - paddle.transform.position;
 	}

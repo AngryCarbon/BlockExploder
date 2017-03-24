@@ -3,10 +3,11 @@ using System.Collections;
 
 public class GameOverTrigger : MonoBehaviour {
 
-	public LevelManager levelManager;
+	private LevelManager levelManager;
 
 	void OnTriggerEnter2D (Collider2D collider) {
+		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		Debug.Log ("Trigger");
-		levelManager.LoadLevel ("Win");
+		levelManager.LoadLevel ("Lose");
 	}
 }
