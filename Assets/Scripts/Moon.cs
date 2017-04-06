@@ -26,8 +26,8 @@ public class Moon : MonoBehaviour {
 				hasStarted = true;
 				Debug.Log ("You clicked the mouse button! Hurray!");
 				
-				float[] possibleXValues = new float[] {-0.4F, -0.3F, -0.2F, 0.2F, 0.3F, 0.4F};
-				float x = possibleXValues[Random.Range (1, 6)];
+				float[] possibleXValues = new float[] {-0.7F, 0.7F};
+				float x = possibleXValues[Random.Range (0, 1)];
 				
 				this.rigidbody2D.velocity = new Vector2 (x, 10F);
 			}
