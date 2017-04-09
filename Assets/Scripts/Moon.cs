@@ -35,8 +35,14 @@ public class Moon : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision) {
+		// Value to alter the velocity of the Moon by when it bounces -- to avoid infinite play loops
+		Vector2 tweak = new Vector2 (Random.Range (0f, 0.2f), Random.Range (0f, 0.2f));
+
 		if (hasStarted) {
+			// Play bounce sound
 			audio.Play ();
+			// Alter velocity of the Moon
+			rigidbody2D.velocity += tweak;
 		}
 	}
 		
