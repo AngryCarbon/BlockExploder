@@ -18,7 +18,6 @@ public class Brick : MonoBehaviour {
 		
 		if (isBreakable) {
 			breakableCount++;
-			Debug.Log(breakableCount);
 		}
 		
 		levelManager = GameObject.FindObjectOfType<LevelManager> ();
@@ -55,7 +54,7 @@ public class Brick : MonoBehaviour {
 		if (damageSprites[spriteIndex]) {
 			this.GetComponent<SpriteRenderer> ().sprite = damageSprites[spriteIndex];
 		} else {
-			Debug.Log (this.name + ": Sprite at index " + spriteIndex + " did not load!");
+			Debug.LogError (this.name + ": Sprite at index " + spriteIndex + " did not load!");
 		}
 	}
 }
