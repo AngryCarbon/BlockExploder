@@ -6,6 +6,7 @@ public class Brick : MonoBehaviour {
 	public Sprite[] damageSprites;
 	public static int breakableCount = 0;
 	public AudioClip blockDamageSound;
+	public GameObject explosion;
 
 	private int timesHit;
 	private LevelManager levelManager;
@@ -42,6 +43,7 @@ public class Brick : MonoBehaviour {
 		if (timesHit >= maxHits) {
 			breakableCount--;
 			levelManager.BrickDestroyed ();
+			GameObject myExplosion = GameObject.Instantiate (explosion, transform.position, Quaternion.identity) as GameObject;
 			Destroy (gameObject);
 		} else {
 			LoadSprite ();
