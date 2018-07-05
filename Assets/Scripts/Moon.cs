@@ -29,7 +29,7 @@ public class Moon : MonoBehaviour {
 				float[] possibleXValues = new float[] {-0.7F, 0.7F};
 				float x = possibleXValues[Random.Range (0, 1)];
 				
-				this.rigidbody2D.velocity = new Vector2 (x, 10F);
+				this.GetComponent<Rigidbody2D>().velocity = new Vector2 (x, 10F);
 			}
 		}
 	}
@@ -40,9 +40,9 @@ public class Moon : MonoBehaviour {
 
 		if (hasStarted) {
 			// Play bounce sound
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 			// Alter velocity of the Moon
-			rigidbody2D.velocity += tweak;
+			GetComponent<Rigidbody2D>().velocity += tweak;
 		}
 	}
 		
